@@ -1,0 +1,410 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Environmental impact of ebooks</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="lib/c3-0.4.18/c3.css" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		<script src="lib/c3-0.4.18/c3.min.js"></script>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<style>
+
+			.handline {
+			  fill: none;
+			  stroke: rgb(255, 127, 14) !important;
+			  stroke-width: 4px;
+			  stroke-linejoin: round;
+			  stroke-linecap: round;
+			}
+
+			</style>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+				<h1 style="text-align: center;padding-top:10%;">
+					Environmental impact of ebooks vs print books
+				</h1>
+				<h3 style="text-align: center;padding-top:5%;">
+					Isn't it obvious? Why should you even care?
+				</h3>
+				<p style="padding-top:5%;">
+					Since their debut, millions of e-readers have been sold—today, as many as
+					one in four American adults owns an e-reader or tablet. By 2025, e-readers are
+					projected to make up approximately 75 percent of the total market.
+				</p>
+				<p>At the same time, the number of books produced and sold around the world
+					has been steadily increasing. Put another way: Both print book and e-reader
+					consumption are on the rise.</p>
+				<p style="padding-top:20%;"><mark>Starting from the orange point, try to predict (draw) the graph for the environmental impact of ebooks over time.</mark></p>
+				<!-- One -->
+					<section class="banner style2" style="min-height: 75vh;">
+
+						<div class="image" style="text-align: center;padding-top: 5%;">
+							<div id="predictchart" style="padding-left:25%;padding-right:25%;width:50%;height:50%;"></div>
+							<div style="text-align: center; padding-top: 5%;">
+							<button onClick = "reset()">Reset</button>
+							<button onClick = "submit()">Submit</button>
+							</div>
+						</div>
+					</section>
+
+
+<div id="solutionPart" style="display:none;">
+
+				<!-- Two -->
+				<section id="correctGraph" class="banner style2">
+					<div style="text-align: center;padding-top: 5%;">
+						<div id="chart" style="padding-left:25%;padding-right:25%;width:50%;height:50%;"></div>
+					</div>
+				</section>
+
+				<h3 style="text-align: center;">
+					Your chart maybe a bit off. But you are not entirely wrong.
+				</h3>
+				<p style="padding-top:5%;">
+					Though at first glance, ebooks may seem like an ideal way to reduce CO<sub>2</sub> emissions and save our forests,
+					there are a variety of factors to consider that make the choice of switching to e-reader technology
+					a more difficult one than it might initially appear; there can be no doubt that the manufacturing,
+					use, and disposal of these devices has an affect on our environment.
+				</p>
+				<p>The challenge is the fact that user behavior will significantly influence the impact of an e-book.</p>
+				<p>
+						Some of the factors are:
+					</br>
+						a.  One person can read hundreds of ebooks as compared to another who reads only one.</br>
+						b.  Some readers purchases e-reader every other year.</br>
+						c.  Printed books can be shared with friends.</br>
+						d.  Most E-readers can be used for a variety of tasks other than reading books
+
+				</p>
+
+				<h2 style="text-align: center;padding-top:30%;padding-bottom: 30%;">
+						Let’s try to assess the different factors that need to be considered in this debate:
+				</h2>
+
+				<h3 style="text-align: center;padding-bottom: 2%;">
+						Manufacturing
+				</h3>
+				<!-- Manufacturing Cost -->
+				<section class="banner style2" style="background-color: rgba(0, 0, 0, 0.125);">
+					<div>
+							<svg width="550" height="40">>
+								<rect x="100" width="440" height="100" style="fill:rgb(31, 119, 180);" />
+							</svg>
+							168 Kgs of CO<sub>2</sub> emissions for an E-reader
+							<div></div>
+							<svg width="550" height="40">>
+								<rect x="100" width="20" height="100" style="fill:rgb(255, 127, 14);" />
+							</svg>
+							7.5 Kgs of CO<sub>2</sub> emissions for print book
+					</div>
+				</section>
+				<p>
+					A single e-reader’s total carbon footprint is approximately 168kg, and for a book, this figure is somewhere in the range of 7.5kg; the book’s length and type can lead this figure to vary.
+				</p>
+
+				<p>
+					But the 168kg needed to sustain a Kindle during the entirety of its lifecycle is a clear winner when looking at potential savings of nearly 1,074kg if it is used to replace 3 books a month for 4 years.
+				</p>
+
+				<h3 style="text-align: center;padding-top:20%;">Energy consumption</h3>
+
+				<section class="banner style2" style="background-color: rgba(0, 0, 0, 0.125);">\
+					<div>
+								<div id="readingchart" style="padding-left:25%;padding-right:25%;width:50%;height:50%;"></div>
+					</div>
+				</section>
+
+				<h4 style="text-align: center;padding-top:2%;">Here is a graph showing the effect of e-reader vs print books over a span of 5 years</h4>
+				<p style="padding-top:4%;">
+					An E-reader requires energy consumption during the “use” stage of its lifecycle. This number is likely to be much lower for dedicated e-readers that use e-ink technology which only requires energy to change the words on the page and does use power while the user is actually reading.
+				</p>
+				<p>But we haven't taken into account the energy used to transmit data over the internet. But at this point it is assumed to be quite minimal compared to the total content of the internet.
+				</p>
+
+				<p>If you read at night for multiple hours, powering the light bulb in a bedside lamp will likely use up more energy than it takes to charge an e-reader. But most of your reading occurs during daylight hours (i.e., without electric lighting), then books come out on top.
+				</p>
+
+				<h3 style="text-align: center;padding-top:20%;">Usage</h3>
+				<h4 style="text-align: center;padding-top:1%;">So reading how many ebooks will make the e-reader advantageous?</h4>
+
+				<section class="banner style2" style="background-color: rgba(0, 0, 0, 0.125);">
+
+					<div>
+						<svg width="500" height="180">
+							<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+					      <stop offset="0%" style="stop-color:rgb(31, 119, 180);start-opacity:0.7" />
+					      <stop offset="100%" style="stop-color:rgb(255, 127, 14);stop-opacity:0.7" />
+					    </linearGradient>
+							<text x="50" y="45">0</text>
+							<text x="90" y="45">10</text>
+							<text x="130" y="45">20</text>
+							<text x="170" y="45">30</text>
+							<text x="210" y="45">40</text>
+							<text x="250" y="45">50</text>
+							<text x="290" y="45">60</text>
+							<text x="330" y="45">70</text>
+							<text x="370" y="45">80</text>
+							<text x="410" y="45">90</text>
+							<text x="450" y="45">100</text>
+
+							<rect x="50" y="50" width="120" height="50" style="fill:rgb(31, 119, 180);fill-opacity:0.3;"/>
+							 <rect x="170" y="50" width="160" height="50" fill="url(#grad1)"/>
+							 <rect x="330" y="50" width="120" height="50" style="fill:rgb(255, 127, 14);fill-opacity:0.5;" />
+
+							<text x="60" y="120">Printed books</text>
+							<text x="60" y="140">have lower</text>
+							<text x="60" y="160">impact</text>
+
+							<text x="180" y="120">Not clear which is</text>
+							<text x="180" y="140">better</text>
+
+							<text x="340" y="120">E-books have</text>
+							<text x="340" y="140">lower impact</text>
+
+
+							</svg>
+						</div>
+				</section>
+
+				<p style="padding-top:2%;">
+					 As the number of printed books that the E-reader offsets increases, so do the benefits of that E-reader. At some point these gains offset the impact of manufacturing and using the E-reader. This “breakeven point” will be different for different metrics of environmental performance but for most it is likely somewhere between 30 and 70 printed books that are offset over the lifetime of the E-reader. For greenhouse gas emissions this number is probably between 20 and 35 books while for measures of human health impacts the number is probably closer to 70 books.
+				</p>
+			<p>The assumption is that the reader would either purchase a new printed book once and not share it with anyone else or that the reader would read the books on an E-reader and only use the E-reader for reading books. </p>
+			<p>If a person would normally share a printed book with others, buy some used printed books, or borrow many of the printed books from the library then the numbers would need to be adjusted to account for that. </p>
+			<!--<p>Additionally, if the E-reader is used for other activities such as watching video, browsing the internet, checking email, or reading magazines and newspapers, it is unfair to assign the full impacts of producing the E-reader to E-books.</p>-->
+
+
+				<!-- Electronic Waste -->
+				<h3 style="text-align: center;padding-top:20%;">Electronic Waste</h3>
+
+						<p>Not all manufacturers have recycling programs and not all of them mean what they say.</br>
+							In some cases this simply means the item will be shipped to a developing country where in some cases children will dismantle the product removing only the most valuable components under unsafe working conditions. The rest of the “recycled” product is then landfilled or incinerated sometimes exposing workers and the community to toxic materials.</p>
+						<p>However, in case of a book, if it makes its way to a landfill, then its process of decomposition will produce twice the climate change emissions as the manufacturing process.</p>
+
+
+				<!-- Recommended steps -->
+				<h3 style="text-align: center;padding-top:20%;">How to decrease your Carbon footprint?</h2>
+
+
+
+
+							<!--< style="padding:2rem 25% 1rem 25%;">-->
+							<p>
+								Buy rarely, or buy used. Whether it’s a book or an e-reader, buying new products always takes a toll on the environment. Whenever you can, borrow or buy used materials.
+							</p>
+							<p>
+								If you do buy an e-reader, use it up. There’s no need to upgrade just because a retailer comes out with a glitzier version. If you buy an e-reader but find that you aren’t using it, sell or give it to someone who will.
+							</p>
+							<p>
+								Choose recycled books. Choosing recycled helps diminish the environmental impact of making those books in the first place.
+							</p>
+							<p>
+								Join the library. Sharing distributes the environmental impact of a book over a whole community and promotes reuse over new production.
+							</p>
+
+
+
+				<!--Conclusion -->
+
+					<h2 style="text-align: center;padding-top:30%;">Conclusion</h2>
+
+							<h3 style="padding:2rem 25% 1rem 25%;">When consumers take note of their reading habits and the printing industry adapts
+								accordingly, ebooks clearly have the potential to lessen CO<sub>2</sub> emissions.</h3>
+								<h3 style="padding:0 25% 15rem 25%;">
+								That being said, it is important to take in all facets of the books vs ebooks
+								debate as well as look at possible alternatives, like libraries and apps, when
+								deciding what is best in your unique situation.</h3>
+
+				<h4 style="text-align:center;">
+					Sources
+				</h4>
+				<div style="text-align:center;">
+					Source 1: http://www.greenpressinitiative.org/documents/ebooks.pdf</br>
+					Source 2: https://www.custommade.com/blog/e-readers-vs-print-books/</br>
+					Source 3: https://theecoguide.org/books-vs-ebooks-protect-environment-simple-decision
+
+				</div>
+
+</div>
+		<!-- Scripts -->
+    <script>
+
+		//Chart 1
+		var firstchart = c3.generate({
+				oninit: function() {
+        this.svg.attr('style', 'overflow:hidden')
+				},
+				padding: {
+				  right: 50
+				},
+				bindto: '#predictchart',
+				data: {
+					xs: {
+						'print media': 'rows',
+						},
+					columns: [
+						['print media', 4716.22, 4231.95, 4733.77, 4266, 4112.25, 5809.5],
+						['rows', 2011, 2012, 2013, 2014, 2015, 2016]
+					],
+					type: 'spline'
+				},
+				axis:{
+					x:{label: 'Year'},
+					y:{label: 'CO2 emissions'}
+				}
+			});
+
+		//Chart 2
+		var secondchart = c3.generate({
+				bindto: '#chart',
+				oninit: function() {
+        this.svg.attr('id', 'actualChart')
+				},
+				padding: {
+				  right: 50
+				},
+				data: {
+					xs: {
+						'print media': 'rows',
+						'e-readers': 'rows',
+						},
+					columns: [
+						['print media', 4716.22, 4231.95, 4733.77, 4266, 4112.25, 5809.5],
+						['e-readers', 1747.2, 6367.2, 6720, 5695.2, 4250.4, 3393.6],
+						['rows', 2011, 2012, 2013, 2014, 2015, 2016]
+					],
+					type: 'spline'
+				},
+				axis:{
+					x:{label: 'Year'},
+					y:{label: 'CO2 emissions'}
+				}
+			});
+
+
+
+
+				//Chart 3
+				var thirdchart = c3.generate({
+						bindto: '#readingchart',
+						data: {
+							xs: {
+            		'e-readers': 'rows',
+            		'print media': 'rows',
+        				},
+							columns: [
+								['e-readers', 130, 265, 265, 390, 390],
+								['print media', 50, 80, 105, 135, 160],
+								['rows', 1, 2, 3, 4, 5]
+							]
+						},
+						axis:{
+							x:{label: 'Year'},
+							y:{label: 'CO2 emissions'}
+						}
+					});
+
+	var xaxisgroup = d3.select(".c3-axis-x");
+	xaxisgroup.append("circle")
+	.attr("cx", 0)
+  .attr("cy", 0)
+  .attr("r", 10)
+	.attr("id","startingPoint")
+  .style("fill", "rgb(255, 127, 14)");
+
+		var activeLine;
+		var lineCreated=0;
+
+
+
+		var renderPath = d3.svg.line()
+		.x(function(d) { return d[0]; })
+		.y(function(d) { return d[1]; })
+		.tension(5)
+		.interpolate("cardinal");
+
+
+
+		var svg = d3.select("svg")
+		    	.call(d3.behavior.drag()
+		      .on("dragstart", dragstarted)
+		      .on("drag", dragged)
+		      .on("dragend", dragended));
+
+		var coords;
+
+		function dragstarted() {
+			coords = d3.mouse(this);
+			if(lineCreated == 0){
+				if(coords[0] >= 40 && coords[0] <= 62)
+				{
+					activeLine = svg.append("path").datum([]).attr("class", "handline");
+		  		activeLine.datum().push(d3.mouse(this));
+				}
+			}
+		}
+
+		function dragged() {
+			if(lineCreated == 0){
+				if(coords[0] >= 40 && coords[0] <= 62)
+				{
+		  activeLine.datum().push(d3.mouse(this));
+		  activeLine.attr("d", renderPath);}
+		}
+		}
+
+		function dragended() {
+			if(lineCreated == 0){
+				if(coords[0] >= 40 && coords[0] <= 62)
+				{
+		  activeLine = null;
+			lineCreated++;
+		}
+		}
+		}
+
+		function reset(){
+			lineCreated = 0;
+			d3.select(".handline").remove();
+		}
+
+		function submit(){
+
+			 if(d3.select(".handline")[0][0]!=null){
+			 document.getElementById("solutionPart").style.display = "block";
+		 }
+		 document.getElementById('solutionPart').scrollIntoView({behavior: "smooth",block: "end", block: "nearest"});
+
+		 setTimeout(function () {
+			 firstchart.resize({height:300, width:500})
+       //secondchart.resize({height:300, width:500}),
+			 //thirdchart.resize({height:300, width:500})
+}, 0);
+setTimeout(function () {
+	//firstChart.resize({height:300, width:500}),
+	secondchart.resize({height:300, width:500})
+	//thirdchart.resize({height:300, width:500})
+}, 0);
+setTimeout(function () {
+	//firstChart.resize({height:300, width:500}),
+	//secondchart.resize({height:300, width:500}),
+	thirdchart.resize({height:300, width:500})
+}, 0);
+}
+
+</script>
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
